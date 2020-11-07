@@ -1,1 +1,1 @@
-curl -fsSL https://code-server.dev/install.sh | sh && wget https://github.com/agrinman/tunnelto/releases/download/0.1.9/tunnelto-linux.tar.gz && tar -zxvf tunnelto-linux.tar.gz && sudo cp tunnelto /usr/bin/ && rm tunnelto-linux.tar.gz tunnelto && code-server --auth none >/dev/null && tunnelto --port 8080
+curl -fsSL https://code-server.dev/install.sh | sh && code-server --auth none >/dev/null && tunnelto --port 8080
