@@ -1,2 +1,7 @@
 curl -fsSL https://code-server.dev/install.sh | sh
-npm i -g spt-cli
+sudo npm i -g spt-cli localtunnel
+code(){
+     code-server --auth none --disable-telemetry
+}
+code &
+lt --port 8080
