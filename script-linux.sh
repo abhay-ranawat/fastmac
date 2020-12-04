@@ -3,5 +3,8 @@ sudo npm i -g spt-cli localtunnel
 code(){
      code-server --auth none --disable-telemetry
 }
-code &
+tunnel(){
 lt --port 8080
+}
+code &
+tunnel &
