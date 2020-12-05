@@ -8,13 +8,15 @@ install_snapd(){
     sudo snap install starship
 }
 install_apt(){
-    sudo apt-get update && sudo apt-get install -y httpie 
+    sudo apt-get update
+    sudo apt-get install -y httpie 
 }
 install_npm(){
     sudo npm install -g spt-cli flipacoin localtunnel
 }
 install_brew(){
-     brew install mongosh ffsend youtube-dl
+    brew tap mongodb/brew
+    brew install mongosh ffsend youtube-dl
 }
 bashrc(){
     #Modifying Bashrc
@@ -32,8 +34,13 @@ install_extensions(){
     code-server --force --install-extension esbenp.prettier-vscode
 }
 restore_state(){
-    wget https://github.com/ClassOfCode/test/blob/master/code-server-github.zip && unzip code-server-github.zip && mkdir /home/runner/.local/ && mkdir /home/runner/.local/share/ && sudo mv code-server /home/runner/.local/share/ && rm code-server-github.zip
+    #Restore State
+    wget https://github.com/ClassOfCode/test/blob/master/code-server-github.zip && unzip code-server-github.zip
+    mkdir /home/runner/.local/ && mkdir /home/runner/.local/share/
+    sudo mv code-server /home/runner/.local/share/ && rm code-server-github.zip
+    #Make Coder Folder
     sudo mkdir /home/coder/
+    #Restore Logins
 }
 code(){
     code-server --auth none --disable-telemetry /home/coder/
