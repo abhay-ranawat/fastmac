@@ -19,10 +19,10 @@ install_brew(){
 bashrc(){
     #Modifying Bashrc
     #Adding Starship to Bashrc
-    sudo echo 'eval "$(starship init bash)"' >> /home/runner/.bashrc
+    sudo echo 'eval "$(starship init bash)"' >> ~/.bashrc
     #Adding Fly to Bashrc
-    sudo echo 'export FLYCTL_INSTALL="/root/.fly"' >> /home/runner/.bashrc
-    sudo echo 'export PATH="$FLYCTL_INSTALL/bin:$PATH"' >> /home/runner/.bashrc
+    sudo echo 'export FLYCTL_INSTALL="/home/runner/.fly"' >> ~/.bashrc
+    sudo echo 'export PATH="$FLYCTL_INSTALL/bin:$PATH"' >> ~/.bashrc
 }
 install_extensions(){
     code-server --force --install-extension eamodio.gitlens
@@ -46,7 +46,7 @@ install_scripts
 install_apt
 install_npm
 install_snapd
-bashrc
+sudo bashrc
 restore_state
 install_extensions
 code &
