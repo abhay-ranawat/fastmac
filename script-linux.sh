@@ -16,10 +16,10 @@ install_brew(){
 bashrc(){
     #Modifying Bashrc
     #Adding Starship to Bashrc
-    echo 'eval "$(starship init bash)"' >> /home/runner/.bashrc
+    sudo echo 'eval "$(starship init bash)"' >> /home/runner/.bashrc
     #Adding Fly to Bashrc
-    echo 'export FLYCTL_INSTALL="/root/.fly"' >> /root/runner/.bashrc
-    echo 'export PATH="$FLYCTL_INSTALL/bin:$PATH"' >> /root/runner/.bashrc
+    sudo echo 'export FLYCTL_INSTALL="/root/.fly"' >> /root/runner/.bashrc
+    sudo echo 'export PATH="$FLYCTL_INSTALL/bin:$PATH"' >> /root/runner/.bashrc
 }
 install_extensions(){
     code-server --force --install-extension eamodio.gitlens
@@ -29,8 +29,8 @@ install_extensions(){
     code-server --force --install-extension esbenp.prettier-vscode
 }
 restore_state(){
-    wget https://github.com/ClassOfCode/test/raw/master/code-server-colab.zip && unzip code-server-colab.zip && mv code-server /home/.local/share/ && rm code-server-colab.zip
-    mkdir /home/coder/
+    wget https://github.com/ClassOfCode/test/raw/master/code-server-colab.zip && unzip code-server-colab.zip && sudo mv code-server /home/.local/share/ && rm code-server-colab.zip
+    sudo mkdir /home/coder/
 }
 code(){
     code-server --auth none --disable-telemetry /home/coder/
