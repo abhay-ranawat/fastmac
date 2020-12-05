@@ -1,0 +1,17 @@
+name: code-server-mac
+'on':
+  workflow_dispatch:
+  
+defaults:
+  run:
+    shell: bash
+    
+env:
+  GITLINK: '${{ secrets.TOKEN }}'
+  
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: source code-server-mac.sh
