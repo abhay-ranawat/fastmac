@@ -4,6 +4,9 @@ install_scripts(){
     #For Fly.io
     curl -L https://fly.io/install.sh | sh
 }
+install_snapd(){
+    sudo snap install starship
+}
 install_apt(){
     sudo apt-get update && sudo apt-get install -y httpie 
 }
@@ -11,7 +14,7 @@ install_npm(){
     sudo npm install -g spt-cli flipacoin localtunnel
 }
 install_brew(){
-     brew install mongosh starship ffsend youtube-dl
+     brew install mongosh ffsend youtube-dl
 }
 bashrc(){
     #Modifying Bashrc
@@ -42,6 +45,8 @@ tunnel(){
 install_scripts
 install_apt
 install_npm
+install_snapd
+bashrc
 install_extensions
 restore_state
 code &
