@@ -3,16 +3,15 @@ install_scripts(){
     curl -fsSL https://code-server.dev/install.sh | sh
     #For Fly.io
     curl -L https://fly.io/install.sh | sh
-    #For Starship
-    wget https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz && tar -zxvf starship*.tar.gz && sudo cp starship /usr/bin/ && rm starship-x86_64-unknown-linux-gnu.tar.gz starship
-    #For FFSend
-    wget https://github.com/timvisee/ffsend/releases/download/v0.2.68/ffsend-v0.2.68-linux-x64-static && mv ./ffsend-* ./ffsend && chmod a+x ./ffsend && sudo mv ./ffsend /usr/bin/ 
 }
 install_apt(){
     sudo apt-get update && sudo apt-get install -y httpie 
 }
 install_npm(){
     sudo npm install -g spt-cli flipacoin localtunnel
+}
+install_brew(){
+     brew install mongosh starship ffsend youtube-dl
 }
 bashrc(){
     #Modifying Bashrc
