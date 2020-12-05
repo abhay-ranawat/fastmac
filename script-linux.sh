@@ -14,9 +14,18 @@ install_apt(){
 install_npm(){
     sudo npm install -g spt-cli flipacoin localtunnel
 }
+install_prog(){
+    #For MongoSH
+    wget https://github.com/mongodb-js/mongosh/releases/download/v0.6.1/mongosh_0.6.1_amd64.deb
+    sudo dpkg --install mongosh_*_amd64.deb
+    rm mongosh_*_amd64.deb
+    #For FFSend
+    wget https://github.com/timvisee/ffsend/releases/download/v0.2.68/ffsend-v0.2.68-linux-x64-static
+    mv ./ffsend-* ./ffsend && chmod a+x ./ffsend && sudo mv ./ffsend /usr/bin/
+}
 install_brew(){
     brew tap mongodb/brew
-    brew install mongosh ffsend youtube-dl
+    brew install mongosh ffsend
 }
 bashrc(){
     #Modifying Bashrc
@@ -35,13 +44,16 @@ install_extensions(){
 }
 restore_state(){
     #Restore State
-    wget https://github.com/ClassOfCode/test/raw/master/code-server-gitcdrbash.zip && unzip code-server-gitcdrbash.zip
+    wget https://github.com/ClassOfCode/test/raw/master/code-server-ga-git.zip && unzip code-server-ga-git.zip
     mkdir /home/runner/.local/ && mkdir /home/runner/.local/share/
-    sudo mv code-server /home/runner/.local/share/ && rm code-server-gitcdrbash.zip
+    sudo mv code-server /home/runner/.local/share/ && rm code-server-ga-git.zip
     #Make Coder Folder
     sudo mkdir /home/coder/
     #Restore Logins
-    #Git Logins    
+    #Git Logins
+    sudo git clone GITLINK
+    cd config-files && sudo cp .fly  /home/runner/ -r && sudo cp .local  /home/runner/ -r && sudo cp .netlify  /home/runner/ -r && sudo cp .gitconfig  /home/runner/ -r && sudo cp .netrc /home/runner/ && sudo cp .config /home/runner/ -r && sudo cp .git-credentials /home/runner/ && cd ..
+    sudo rm -rf config-files
 }
 code(){
     code-server --auth none --disable-telemetry /home/coder/
@@ -53,6 +65,7 @@ tunnel(){
 bashrc
 install_scripts
 install_apt
+install_prog
 install_npm
 install_snapd
 restore_state
