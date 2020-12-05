@@ -46,6 +46,7 @@ bashrc
 install_scripts
 install_apt
 install_npm
+install_brew
 install_snapd
 restore_state
 install_extensions
