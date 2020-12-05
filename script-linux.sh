@@ -5,7 +5,8 @@ install_scripts(){
     curl -L https://fly.io/install.sh | sudo bash
 }
 install_snapd(){
-    sudo snap install starship
+    sudo snap install starship youtube-dl ffsend
+    sudo snap install --classic heroku
 }
 install_apt(){
     sudo apt-get update
@@ -19,13 +20,10 @@ install_prog(){
     wget https://github.com/mongodb-js/mongosh/releases/download/v0.6.1/mongosh_0.6.1_amd64.deb
     sudo dpkg --install mongosh_*_amd64.deb
     rm mongosh_*_amd64.deb
-    #For FFSend
-    wget https://github.com/timvisee/ffsend/releases/download/v0.2.68/ffsend-v0.2.68-linux-x64-static
-    mv ./ffsend-* ./ffsend && chmod a+x ./ffsend && sudo mv ./ffsend /usr/bin/
 }
 install_brew(){
     brew tap mongodb/brew
-    brew install mongosh ffsend
+    brew install mongosh
 }
 bashrc(){
     #Modifying Bashrc
