@@ -51,7 +51,7 @@ restore_state(){
     sudo mkdir /home/coder/
     #Restore Logins
     #Git Logins
-    sudo git clone GITLINK
+    sudo git clone $GITLINK
     cd config-files && sudo cp .fly  /home/runner/ -r && sudo cp .local  /home/runner/ -r && sudo cp .netlify  /home/runner/ -r && sudo cp .gitconfig  /home/runner/ -r && sudo cp .netrc /home/runner/ && sudo cp .config /home/runner/ -r && sudo cp .git-credentials /home/runner/ && cd ..
     sudo rm -rf config-files
 }
