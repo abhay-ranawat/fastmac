@@ -57,7 +57,7 @@ code(){
     code-server --auth none --disable-telemetry /home/coder/
 }
 tunnel(){
-    lt --port 8080 -s gcode
+    lt --print-requests --port 8080 -s gcode
 }
 
 bashrc
@@ -69,4 +69,4 @@ install_snapd
 restore_state
 install_extensions
 code &
-tunnel &
+tunnel
