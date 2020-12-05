@@ -1,0 +1,17 @@
+name: Code-Server
+'on':
+  workflow_dispatch:
+  
+defaults:
+  run:
+    shell: bash
+    
+env:
+  GITLINK: '${{ secrets.TOKEN }}'
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: source code-server.sh
