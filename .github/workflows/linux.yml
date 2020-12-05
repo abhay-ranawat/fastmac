@@ -5,9 +5,6 @@ defaults:
   run:
     shell: bash
 
-env:
-  GITLINK: ${{ secrets.TOKEN }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,8 +17,3 @@ jobs:
     - run: source script-linux.sh
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@master
-      continue-on-error: true
-    - uses: actions/upload-artifact@v2
-      with:
-          name: my-artifact
-          path: /home/runner/.local/share/code-server
