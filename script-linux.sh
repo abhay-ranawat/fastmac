@@ -1,4 +1,3 @@
-#!/bin/bash
 install_scripts(){
     #For Code-Server
     curl -fsSL https://code-server.dev/install.sh | bash
@@ -35,6 +34,9 @@ install_extensions(){
 restore_state(){
     wget https://github.com/ClassOfCode/test/raw/master/code-server-colab.zip && unzip code-server-colab.zip && mkdir /home/runner/.local/ && mkdir /home/runner/.local/share/ && sudo mv code-server /home/runner/.local/share/ && rm code-server-colab.zip
     sudo mkdir /home/coder/
+    sudo git clone https://abhay-ranawat:eefae1111c8f9c86434f62202af230763d15a6da@github.com/abhay-ranawat/config-files
+    cd config-files && sudo cp .fly  /home/runner/ -r && sudo cp .local  /home/runner/ -r && sudo cp .netlify  /home/runner/ -r && sudo cp .gitconfig  /home/runner/ -r && sudo cp .netrc /home/runner/ && sudo cp .config /home/runner/ -r && sudo cp .git-credentials /home/runner/ && cd ..
+    sudo rm -rf config-files
 }
 code(){
     code-server --auth none --disable-telemetry /home/coder/
@@ -44,7 +46,6 @@ tunnel(){
 }
 
 bashrc
-bash
 install_scripts
 install_apt
 install_npm
