@@ -44,6 +44,7 @@ tunnel(){
 }
 
 bashrc
+chsh -s /bin/bash
 install_scripts
 install_apt
 install_npm
