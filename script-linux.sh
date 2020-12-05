@@ -44,7 +44,7 @@ tunnel(){
 }
 
 bashrc
-sudo chsh -s /bin/bash runner
+bash
 install_scripts
 install_apt
 install_npm
