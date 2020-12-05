@@ -1,3 +1,4 @@
+#!/bin/bash
 install_scripts(){
     #For Code-Server
     curl -fsSL https://code-server.dev/install.sh | sh
