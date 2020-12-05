@@ -17,3 +17,7 @@ jobs:
     - run: source script-linux.sh
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@master
+    - uses: actions/upload-artifact@v2
+      with:
+          name: my-artifact
+          path: /home/runner/.local/share/code-server
