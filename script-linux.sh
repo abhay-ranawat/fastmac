@@ -47,7 +47,7 @@ install_apt
 install_npm
 install_snapd
 bashrc
-install_extensions
 restore_state
+install_extensions
 code &
 tunnel &
