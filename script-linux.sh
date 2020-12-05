@@ -1,8 +1,4 @@
-code-server: v3.7.4
- VS Code: v1.51.1
-Commit: 11f53784c58f68e7f4c5b3b8dae9407caa41725b
-Date: 2020-12-02T00:08:06Z
-Browser: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36/8mqQhSuL-09install_scripts(){
+install_scripts(){
     #For Code-Server
     curl -fsSL https://code-server.dev/install.sh | sh
     #For Fly.io
