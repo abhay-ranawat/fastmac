@@ -35,12 +35,13 @@ install_extensions(){
 }
 restore_state(){
     #Restore State
-    wget https://github.com/ClassOfCode/test/blob/master/code-server-github.zip && unzip code-server-github.zip
+    wget https://github.com/ClassOfCode/test/raw/master/code-server-gitcdrbash.zip && unzip code-server-gitcdrbash.zip
     mkdir /home/runner/.local/ && mkdir /home/runner/.local/share/
-    sudo mv code-server /home/runner/.local/share/ && rm code-server-github.zip
+    sudo mv code-server /home/runner/.local/share/ && rm code-server-gitcdrbash.zip
     #Make Coder Folder
     sudo mkdir /home/coder/
     #Restore Logins
+    #Git Logins    
 }
 code(){
     code-server --auth none --disable-telemetry /home/coder/
