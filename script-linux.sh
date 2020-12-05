@@ -42,7 +42,6 @@ tunnel(){
 install_scripts
 install_apt
 install_npm
-bashrc
 install_extensions
 restore_state
 code &
