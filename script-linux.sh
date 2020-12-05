@@ -32,7 +32,7 @@ install_extensions(){
     code-server --force --install-extension esbenp.prettier-vscode
 }
 restore_state(){
-    wget https://github.com/ClassOfCode/test/raw/master/code-server-colab.zip && unzip code-server-colab.zip && mkdir /home/runner/.local/ && mkdir /home/runner/.local/share/ && sudo mv code-server /home/runner/.local/share/ && rm code-server-colab.zip
+    wget https://github.com/ClassOfCode/test/blob/master/code-server-github.zip && unzip code-server-github.zip && mkdir /home/runner/.local/ && mkdir /home/runner/.local/share/ && sudo mv code-server /home/runner/.local/share/ && rm code-server-github.zip
     sudo mkdir /home/coder/
 }
 code(){
