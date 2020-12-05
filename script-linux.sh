@@ -21,8 +21,8 @@ bashrc(){
     #Adding Starship to Bashrc
     sudo echo 'eval "$(starship init bash)"' >> /home/runner/.bashrc
     #Adding Fly to Bashrc
-    sudo echo 'export FLYCTL_INSTALL="/root/.fly"' >> /root/runner/.bashrc
-    sudo echo 'export PATH="$FLYCTL_INSTALL/bin:$PATH"' >> /root/runner/.bashrc
+    sudo echo 'export FLYCTL_INSTALL="/root/.fly"' >> /home/runner/.bashrc
+    sudo echo 'export PATH="$FLYCTL_INSTALL/bin:$PATH"' >> /home/runner/.bashrc
 }
 install_extensions(){
     code-server --force --install-extension eamodio.gitlens
@@ -32,7 +32,7 @@ install_extensions(){
     code-server --force --install-extension esbenp.prettier-vscode
 }
 restore_state(){
-    wget https://github.com/ClassOfCode/test/raw/master/code-server-colab.zip && unzip code-server-colab.zip && sudo mv code-server /home/.local/share/ && rm code-server-colab.zip
+    wget https://github.com/ClassOfCode/test/raw/master/code-server-colab.zip && unzip code-server-colab.zip && sudo mv code-server /home/runner/.local/share/ && rm code-server-colab.zip
     sudo mkdir /home/coder/
 }
 code(){
