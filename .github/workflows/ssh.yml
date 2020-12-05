@@ -1,4 +1,4 @@
-name: linux
+name: ssh
 on: 
   workflow_dispatch:
 defaults:
