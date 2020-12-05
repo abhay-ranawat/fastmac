@@ -42,11 +42,11 @@ tunnel(){
     lt --port 8080 -s gcode
 }
 
+bashrc
 install_scripts
 install_apt
 install_npm
 install_snapd
-sudo bashrc
 restore_state
 install_extensions
 code &
