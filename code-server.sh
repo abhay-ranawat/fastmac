@@ -47,6 +47,7 @@ restore_state(){
     sudo mv code-server /home/runner/.local/share/ && rm code-server-ga-git.zip
     #Make Coder Folder
     sudo mkdir /home/runner/coder/
+    sudo chmod -R ugo+rw /home/runner/coder/
     #Restore Logins
     #Git Logins
     sudo git clone $GITLINK
@@ -61,12 +62,12 @@ tunnel(){
 }
 
 bashrc
+install_snapd &
 install_scripts
 install_apt
 install_prog
 install_npm
 restore_state
 install_extensions
-install_snapd &
 code &
 tunnel
