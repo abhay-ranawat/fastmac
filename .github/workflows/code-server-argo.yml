@@ -1,4 +1,4 @@
-name: code-server
+name: code-server-algo
 'on':
   workflow_dispatch:
   
