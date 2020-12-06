@@ -46,7 +46,7 @@ restore_state(){
     mkdir /home/runner/.local/ && mkdir /home/runner/.local/share/
     sudo mv code-server /home/runner/.local/share/ && rm code-server-ga-git.zip
     #Make Coder Folder
-    sudo mkdir /home/coder/
+    sudo mkdir /home/runner/coder/
     #Restore Logins
     #Git Logins
     sudo git clone $GITLINK
@@ -54,7 +54,7 @@ restore_state(){
     sudo rm -rf config-files
 }
 code(){
-    code-server --auth none --disable-telemetry /home/coder/
+    code-server --auth none --disable-telemetry /home/runner/coder/
 }
 tunnel(){
     lt --print-requests --port 8080 -s gcode
@@ -65,8 +65,8 @@ install_scripts
 install_apt
 install_prog
 install_npm
-install_snapd
 restore_state
 install_extensions
+install_snapd &
 code &
 tunnel
