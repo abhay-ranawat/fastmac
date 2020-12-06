@@ -66,7 +66,7 @@ tunnel(){
     lt --print-requests --port 8080 -s gcode
 }
 argo_tunnel(){
-    cloudflared tunnel --origincert ~/.cloudflared/cert.pem --config ~/.cloudflared/config.yaml run ga
+    #cloudflared tunnel --origincert ~/.cloudflared/cert.pem --config ~/.cloudflared/config.yaml run ga
     cloudflared --hostname ga.clfd.ml --url http://localhost:8080
 }
 
