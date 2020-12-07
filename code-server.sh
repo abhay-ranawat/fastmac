@@ -20,6 +20,10 @@ install_prog(){
     wget https://github.com/mongodb-js/mongosh/releases/download/v0.6.1/mongosh_0.6.1_amd64.deb
     sudo dpkg --install mongosh_*_amd64.deb
     rm mongosh_*_amd64.deb
+    #For CLoudlfared
+    wget https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-amd64.deb 
+    sudo dpkg --install cloudflared-*-amd64.deb
+    rm cloudflared-*-amd64.deb
 }
 install_brew(){
     brew tap mongodb/brew
@@ -39,6 +43,7 @@ install_extensions(){
     code-server --force --install-extension github.vscode-pull-request-github
     code-server --force --install-extension compulim.vscode-ipaddress
     code-server --force --install-extension esbenp.prettier-vscode
+    code-server --force --install-extension ms-azuretools.vscode-docker
 }
 restore_state(){
     #Restore State
@@ -51,7 +56,7 @@ restore_state(){
     #Restore Logins
     #Git Logins
     sudo git clone $GITLINK
-    cd config-files && sudo cp .fly  /home/runner/ -r && sudo cp .local  /home/runner/ -r && sudo cp .netlify  /home/runner/ -r && sudo cp .gitconfig  /home/runner/ -r && sudo cp .netrc /home/runner/ && sudo cp .config /home/runner/ -r && sudo cp .git-credentials /home/runner/ && cd ..
+    cd config-files && sudo cp .fly  /home/runner/ -r && sudo cp .local  /home/runner/ -r && sudo cp .netlify  /home/runner/ -r && sudo cp .gitconfig  /home/runner/ -r && sudo cp .netrc /home/runner/ && sudo cp .config /home/runner/ -r && sudo cp .git-credentials /home/runner/ && sudo cp .cloudflared /home/runner/ -r && cd ..
     sudo rm -rf config-files
 }
 code(){
