@@ -67,7 +67,7 @@ tunnel(){
 }
 argo_tunnel(){
     #cloudflared tunnel --origincert ~/.cloudflared/cert.pem --config ~/.cloudflared/config.yaml run ga
-    cloudflared --hostname ga.clfd.ml --url http://localhost:8080
+    sudo cloudflared --hostname ga.clfd.ml --url http://localhost:8080
 }
 
 bashrc
